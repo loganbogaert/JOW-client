@@ -1,0 +1,116 @@
+<app-header></app-header>
+
+<div id="dashboard">
+    <div class="dashboard-content">
+        <div class="row">
+            <div class="col-md-12">
+                <nav id="navigation" class="menu">
+                    <ul id="responsive">
+                        <li><a href="javascript:void(0)" routerLink="/dashboard"
+                                [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">Home</a></li>
+                        <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">Messages</a></li>
+                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">{{userType === 'ask-skill' ? 'Add Request' : 'Add Profile'}}
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div  *ngIf="userType === 'ask-skill'" class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-list-box with-icons ">
+                    <h4>My Matching</h4>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 margin-bottom-10">
+                <div class="dashboard-list-box with-icons ">
+                    <div class="row">
+                        <div class="col-md-12 " style="margin-left:30px;">
+                            <h3>Request 1</h3>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-left:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1"><a href="javascript:void(0)" class="button centered"><i
+                                    class="fa fa-envelope"></i> </a></div>
+                        <div class="col-md-2"><a href="javascript:void(0)" class="button centered">Contact</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 margin-bottom-10">
+                <div class="dashboard-list-box with-icons ">
+                    <div class="row">
+                        <div class="col-md-12 " style="margin-left:30px;">
+                            <h3>Request 2</h3>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-left:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1"><a href="javascript:void(0)" class="button centered"><i
+                                    class="fa fa-envelope"></i> </a></div>
+                        <div class="col-md-2"><a href="javascript:void(0)" class="button centered">Contact</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="userType != 'ask-skill'" class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-list-box with-icons ">
+                    <h4>My Matching</h4>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 margin-bottom-10">
+                <div class="dashboard-list-box with-icons ">
+                    <div class="row">
+                        <div class="col-md-12 " style="margin-left:30px;">
+                            <h3>Profile 1</h3>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-left:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1"><a href="javascript:void(0)" class="button centered"><i
+                                    class="fa fa-envelope"></i> </a></div>
+                        <div class="col-md-2"><a href="javascript:void(0)" class="button centered">Contact</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 margin-bottom-10">
+                <div class="dashboard-list-box with-icons ">
+                    <div class="row">
+                        <div class="col-md-12 " style="margin-left:30px;">
+                            <h3>Profile 2</h3>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-left:30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1"><a href="javascript:void(0)" class="button centered"><i
+                                    class="fa fa-envelope"></i> </a></div>
+                        <div class="col-md-2"><a href="javascript:void(0)" class="button centered">Contact</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

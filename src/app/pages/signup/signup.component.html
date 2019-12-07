@@ -1,0 +1,86 @@
+<header class="sticky-header">
+    <div class="container">
+        <div class="sixteen columns">
+            <div id="logo">
+                <h1><a href="javascript:void(0)" routerLink="/"><img src="assets/images/logo.png" alt="Work Scout" /></a></h1>
+            </div>
+            <nav id="navigation" class="menu">
+                <ul class="responsive float-right">
+                    <li><a href="javascript:void(0)" class="sf-with-ul"><i class="fa fa-globe"></i></a>
+                        <ul>
+                            <li><a href="javascript:void(0)">French</a></li>
+                            <li><a href="javascript:void(0)">Dutch</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0)" routerLink="/register"><i class="fa fa-user"></i> Sign Up</a></li>
+                    <li><a href="javascript:void(0)" routerLink="/login"><i class="fa fa-lock"></i> Log In</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-navigation">
+                <a href="#menu" class="menu-trigger"><i class="fa fa-reorder"></i> Menu</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="my-account">
+        <div class="tabs-container">
+            <ul class="tabs-nav">
+                <li class="active"><a href="javascript:void(0)">Sign Up</a></li>
+            </ul>
+            <div class="tab-content">
+                <form class="register" [formGroup]="singUpForm">
+                    <div class="form-row ">
+                        <input type="radio" name="offer" formControlName="offer" value="I offer a skill" (change)="selectOffer()" required /> I Offer a Skill <br>
+                        <input type="radio" name="offer" formControlName="offer" value="I ask for a skill" (change)="selectOffer()" required /> I ask for a Skill
+                        <div *ngIf="submitted && formControls.offer.errors">
+                            <label class="error" *ngIf="formControls.offer.errors.required" style="top: 25px;left: 150px;">Select single offer is required</label>
+                        </div>
+                    </div>
+                    <div class="form-row form-row-wide">
+                        <label for="email2">Email Address:
+                            <i class="ln ln-icon-Mail"></i>
+                            <input type="text" class="input-text" name="email" id="email" formControlName="email" email required />
+                            <div *ngIf="submitted && formControls.email.errors">
+                                <label class="error" *ngIf="formControls.email.errors.required">Email is required</label>
+                                <label class="error" *ngIf="formControls.email.errors.email">Please Enter valid email.</label>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row form-row-wide">
+                        <label for="username2">Postcode:
+                            <i class="ln ln-icon-Male"></i>
+                            <input type="text" class="input-text" name="postcode" id="postcode" formControlName="postcode" required />
+                            <div *ngIf="submitted && formControls.postcode.errors">
+                                <label class="error" *ngIf="formControls.postcode.errors.required">Postcode is required</label>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row form-row-wide">
+                        <label for="username2">Login:
+                            <i class="ln ln-icon-Male"></i>
+                            <input type="text" class="input-text" name="username" id="username" formControlName="username" required />
+                            <div *ngIf="submitted && formControls.username.errors">
+                                <label class="error" *ngIf="formControls.username.errors.required">username is required</label>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row form-row-wide">
+                        <label for="password1">Password:
+                            <i class="ln ln-icon-Lock-2"></i>
+                            <input class="input-text" type="password" name="password" id="password" formControlName="password" minlength="6" required />
+                            <div *ngIf="submitted && formControls.password.errors">
+                                <label class="error" *ngIf="formControls.password.errors.required">password is required</label>
+                                <label class="error" *ngIf="formControls.password.errors.minlength">Enter minimum 6 characters</label>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" class="button border fw margin-top-10" name="register" value="Sign Up" (click)="onSubmit()" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
