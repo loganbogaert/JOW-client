@@ -62,11 +62,11 @@
                             <div class="row">
                                 <div class="col-md-3"><label>Job</label></div>
                                 <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
+                                        <option *ngFor="let criteria of appModel.criterias['Jobs']" value="{{criteria}}"> {{criteria}}</option>
                                     </select></div>
                                 <div class="col-md-3"><label>Salary</label></div>
                                 <div class="col-md-3"> <select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
+                                        <option value="city"></option>
                                     </select></div>
                             </div>
                             <div class="row">
@@ -83,7 +83,7 @@
                             <div class="row">
                                 <div class="col-md-3"><label>Type of Contract</label></div>
                                 <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
+                                  <option *ngFor="let criteria of appModel.criterias['Contracts']" value="{{criteria}}"> {{criteria}}</option>
                                     </select></div>
                                 <div class="col-md-3"><label>Language</label></div>
                                 <div class="col-md-3"><select style="padding: 14px 18px;">
