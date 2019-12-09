@@ -8,7 +8,7 @@
                     <ul id="responsive">
                         <li><a href="javascript:void(0)" routerLink="/dashboard" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Home</a></li>
                         <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Messages</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">{{userType === 'ask-skill' ? 'Add Request' : 'Add Profile'}} </a></li>
+                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}} </a></li>
                     </ul>
                 </nav>
             </div>
@@ -42,11 +42,11 @@
                         <div class="my-profile">
                             <button class="button margin-top-15"><i class="fa fa-eye"></i>52 Views</button>
                             <button class="button margin-top-15"><i class="fa fa-user"></i>925 Users Online</button>
-                            <label class="margin-top-20">{{userType === 'ask-skill' ? 'My requests' : 'Complete my Profile'}}</label>
-                            <select *ngIf="userType === 'ask-skill'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showRequestItemPage()">
+                            <label class="margin-top-20">{{userType === 'Employer' ? 'My requests' : 'Complete my Profile'}}</label>
+                            <select *ngIf="userType === 'Employer'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showRequestItemPage()">
                                 <option value="1">Request 1</option>
                             </select>
-                            <select *ngIf="userType != 'ask-skill'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showProfileItemPage()">
+                            <select *ngIf="userType != 'Employer'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showProfileItemPage()">
 								<option value="1">Profile 1</option>
 							</select>
                         </div>
@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="dashboard-list-box">
-                    <h4>Make yourself known Complete your profile!</h4>
+                    <h4>Make yourself known Complete your {{userType === 'Employer' ? 'request!' : 'profile!'}}</h4>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12">
@@ -63,9 +63,9 @@
                     <h4>Maximize your chances to match</h4>
                     <ul class="dashboard-packages">
                         <li>
-                            <a *ngIf="userType === 'ask-skill'" href="javascript:void(0)" class="button centered" routerLink="/add"><i class="fa fa-pencil"></i> Complete
+                            <a *ngIf="userType === 'Employer'" href="javascript:void(0)" class="button centered" routerLink="/add"><i class="fa fa-pencil"></i> Complete
                                 your Request</a>
-                            <a *ngIf="userType != 'ask-skill'" href="javascript:void(0)" class="button centered" routerLink="/add"><i class="fa fa-pencil"></i> Complete
+                            <a *ngIf="userType != 'Employer'" href="javascript:void(0)" class="button centered" routerLink="/add"><i class="fa fa-pencil"></i> Complete
                                 your Profile</a>
                         </li>
                     </ul>

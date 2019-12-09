@@ -1,3 +1,4 @@
+import { AppModelService } from 'src/app/models/app-model.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  userType = localStorage.getItem('user_type');
+  userType = this.appModel.type;
 
-  constructor() { }
+  constructor(private appModel: AppModelService) { }
 
   ngOnInit() {
     console.log(this.userType);

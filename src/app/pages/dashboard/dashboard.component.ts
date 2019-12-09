@@ -1,3 +1,4 @@
+import { AppModelService } from './../../models/app-model.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  userType = localStorage.getItem('user_type');
+  userType = this.appModel.type;
   selectedItem;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private appModel: AppModelService) { }
 
   ngOnInit() {
     console.log(this.userType);

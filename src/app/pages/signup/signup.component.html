@@ -32,8 +32,8 @@
             <div class="tab-content">
                 <form class="register" [formGroup]="singUpForm">
                     <div class="form-row ">
-                        <input type="radio" name="offer" formControlName="offer" value="I offer a skill" (change)="selectOffer()" required /> I Offer a Skill <br>
-                        <input type="radio" name="offer" formControlName="offer" value="I ask for a skill" (change)="selectOffer()" required /> I ask for a Skill
+                        <input type="radio" name="offer" formControlName="offer" value="Employer" (change)="selectOffer()" required /> I Offer a Skill <br>
+                        <input type="radio" name="offer" formControlName="offer" value="Employee" (change)="selectOffer()" required /> I ask for a Skill
                         <div *ngIf="submitted && formControls.offer.errors">
                             <label class="error" *ngIf="formControls.offer.errors.required" style="top: 25px;left: 150px;">Select single offer is required</label>
                         </div>
@@ -48,7 +48,7 @@
                             </div>
                         </label>
                     </div>
-                    <div class="form-row form-row-wide">
+                   <!--- <div class="form-row form-row-wide">
                         <label for="username2">Postcode:
                             <i class="ln ln-icon-Male"></i>
                             <input type="text" class="input-text" name="postcode" id="postcode" formControlName="postcode" required />
@@ -56,8 +56,8 @@
                                 <label class="error" *ngIf="formControls.postcode.errors.required">Postcode is required</label>
                             </div>
                         </label>
-                    </div>
-                    <div class="form-row form-row-wide">
+                    </div> -->
+                  <!---  <div class="form-row form-row-wide">
                         <label for="username2">Login:
                             <i class="ln ln-icon-Male"></i>
                             <input type="text" class="input-text" name="username" id="username" formControlName="username" required />
@@ -65,7 +65,7 @@
                                 <label class="error" *ngIf="formControls.username.errors.required">username is required</label>
                             </div>
                         </label>
-                    </div>
+                    </div> -->
                     <div class="form-row form-row-wide">
                         <label for="password1">Password:
                             <i class="ln ln-icon-Lock-2"></i>

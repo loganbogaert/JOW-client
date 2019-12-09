@@ -12,7 +12,7 @@
                         <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}"
                                 routerLinkActive="dashboard_tab_active">Messages</a></li>
                         <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}"
-                                routerLinkActive="dashboard_tab_active">{{userType === 'ask-skill' ? 'Add Request' : 'Add Profile'}}
+                                routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}}
                             </a></li>
                     </ul>
                 </nav>
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="userType === 'ask-skill'" class="row">
+        <div *ngIf="userType === 'Employer'" class="row">
             <div class="col-lg-3 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
                     <div class="dashboard-list-box-static">
@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="userType != 'ask-skill'" class="row">
+        <div *ngIf="userType != 'Employer'" class="row">
             <div class="col-lg-3 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
                     <div class="dashboard-list-box-static">

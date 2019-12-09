@@ -1,3 +1,5 @@
+import { AccountControllerService } from './../../controllers/user/account-controller.service';
+import { User } from './../../interfaces/user';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,43 +11,46 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   submitted = false;
+  user: User;
 
   singUpForm = this.fb.group({
-    offer: ["", Validators.required],
-    email: ["", [Validators.required, Validators.email]],
-    postcode: ["", Validators.required],
-    username: ["", Validators.required],
-    password: ["", [Validators.required, Validators.minLength]],
+    offer: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    // postcode: ["", Validators.required],
+   // username: ["", Validators.required],
+    password: ['', [Validators.required, Validators.minLength]],
   });
 
-  constructor(private fb: FormBuilder,private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router, private userController: AccountControllerService) { }
 
   ngOnInit() {
+  }
+
+  moveToHomePage() {
+    this.router.navigate(['/']);
   }
 
   get formControls() { return this.singUpForm.controls; }
 
   onSubmit() {
     this.submitted = true;
-    
-    // stop here if form is invalid
-    if (this.singUpForm.invalid) {
-        return;
-    }else{
-      if(localStorage.getItem('user_type') != null){
-        this.router.navigateByUrl('/dashboard');
-      }
-    }
+    if (!this.singUpForm.invalid) {
+      this.user = {
+        email : this.singUpForm.get('email').value,
+        password : this.singUpForm.get('password').value,
+        type : this.singUpForm.get('offer').value
+      };
+      console.log(this.user);
+      this.userController.createAccount(this.user).then((obj) => {
+        alert('account has been created');
+        this.moveToHomePage();
+      });
+     }
 
   }
 
-  selectOffer(){
-    let selectedOffer = this.singUpForm.value.offer;
-    if(selectedOffer == "I offer a skill"){
-      localStorage.setItem("user_type" , "offer-skill");
-    }else{
-      localStorage.setItem("user_type" , "ask-skill");
-    }
+  selectOffer() {
+
   }
 
 }
