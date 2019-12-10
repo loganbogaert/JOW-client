@@ -1,0 +1,54 @@
+<div class="dashboard-list-box-static">
+  <div class="my-profile">
+      <div class="row">
+          <div class="col-md-3"><label>Job</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+                  <option *ngFor="let criteria of appModel.criterias['Jobs']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+          <div class="col-md-3"><label>Salary</label></div>
+          <div class="col-md-3"> <select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Salaries']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+      </div>
+      <div class="row">
+          <div class="col-md-3"><label>Experience</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Experiences']" value="{{criteria}}"> {{criteria}}</option>
+              </select>
+          </div>
+          <div class="col-md-3"><label>License to Drive</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Licenses']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+      </div>
+      <div class="row">
+          <div class="col-md-3"><label>Type of Contract</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Contracts']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+          <div class="col-md-3"><label>Language</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Languages']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+      </div>
+      <div class="row">
+          <div class="col-md-3"><label>Location</label></div>
+          <div class="col-md-3"><select style="padding: 14px 18px;">
+            <option *ngFor="let criteria of appModel.criterias['Locations']" value="{{criteria}}"> {{criteria}}</option>
+              </select></div>
+          <div class="col-md-1"><label>Free</label></div>
+          <div class="col-md-5"> <textarea name="notes" id="notes" cols="30"
+                  rows="10">Text</textarea></div>
+      </div>
+  </div>
+</div>
+<div class="dashboard-list-box-static">
+  <div class="row">
+      <div class="col-md-4"><button class="button margin-top-15">Save my Profile</button>
+      </div>
+      <div class="col-md-4"><button class="button margin-top-15">Update my Profile
+          </button></div>
+      <div class="col-md-4"><button class="button margin-top-15">Delete my Profile
+          </button></div>
+  </div>
+</div>

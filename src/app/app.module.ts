@@ -14,6 +14,7 @@ import { ProfileAndRequestListComponent } from './pages/profile-and-request-list
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddComponent } from './pages/add/add.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileRequestComponent } from './component/profile-request/profile-request.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyMatchingComponent,
     ProfileAndRequestListComponent,
     DashboardComponent,
-    AddComponent
+    AddComponent,
+    ProfileRequestComponent
   ],
   imports: [
     BrowserModule,

@@ -57,57 +57,8 @@
             </div>
             <div class="col-lg-9 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
-                    <div class="dashboard-list-box-static">
-                        <div class="my-profile">
-                            <div class="row">
-                                <div class="col-md-3"><label>Job</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option *ngFor="let criteria of appModel.criterias['Jobs']" value="{{criteria}}"> {{criteria}}</option>
-                                    </select></div>
-                                <div class="col-md-3"><label>Salary</label></div>
-                                <div class="col-md-3"> <select style="padding: 14px 18px;">
-                                        <option value="city"></option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Experience</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3"><label>License to Drive</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Type of Contract</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                  <option *ngFor="let criteria of appModel.criterias['Contracts']" value="{{criteria}}"> {{criteria}}</option>
-                                    </select></div>
-                                <div class="col-md-3"><label>Language</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Location</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                                <div class="col-md-1"><label>Free</label></div>
-                                <div class="col-md-5"> <textarea name="notes" id="notes" cols="30"
-                                        rows="10">Text</textarea></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-list-box-static">
-                        <div class="row">
-                            <div class="col-md-4"><button class="button margin-top-15">Save my Request</button></div>
-                            <div class="col-md-4"><button class="button margin-top-15">Update my Request </button></div>
-                            <div class="col-md-4"><button class="button margin-top-15">Delete my Request </button></div>
-                        </div>
-                    </div>
+                    <app-profile-request></app-profile-request>
+
                 </div>
             </div>
         </div>
@@ -129,62 +80,7 @@
             </div>
             <div class="col-lg-9 col-md-12">
                 <div class="dashboard-list-box margin-top-0">
-                    <div class="dashboard-list-box-static">
-                        <div class="my-profile">
-                            <div class="row">
-                                <div class="col-md-3"><label>Job</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                                <div class="col-md-3"><label>Salary</label></div>
-                                <div class="col-md-3"> <select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Experience</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3"><label>License to Drive</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Type of Contract</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-
-                                <div class="col-md-3"><label>Language</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3"><label>Location</label></div>
-                                <div class="col-md-3"><select style="padding: 14px 18px;">
-                                        <option value="city">Select</option>
-                                    </select></div>
-                                <div class="col-md-1"><label>Free</label></div>
-                                <div class="col-md-5"> <textarea name="notes" id="notes" cols="30"
-                                        rows="10">Text</textarea></div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dashboard-list-box-static">
-                        <div class="row">
-                            <div class="col-md-4"><button class="button margin-top-15">Save my Profile</button>
-                            </div>
-                            <div class="col-md-4"><button class="button margin-top-15">Update my Profile
-                                </button></div>
-                            <div class="col-md-4"><button class="button margin-top-15">Delete my Profile
-                                </button></div>
-                        </div>
-                    </div>
+                  <app-profile-request></app-profile-request>
                 </div>
             </div>
         </div>

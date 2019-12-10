@@ -8,7 +8,8 @@ export class CriteriaService {
 
   constructor(private http: HttpClient, private appModel: AppModelService) { }
   getcriterias() {
-    const criterias = '[{"criteria" : "Jobs"}, {"criteria" : "Contracts"}]';
+    // tslint:disable-next-line: max-line-length
+    const criterias = '[{"criteria" : "Jobs"}, {"criteria" : "Contracts"}, {"criteria" : "Salaries"}, {"criteria" : "Experiences"}, {"criteria" : "Locations"}, {"criteria" : "Languages"}, {"criteria" : "Licenses"}]';
     return this.http.get(`${this.appModel.url}criteria/?criterias=${criterias}`);
   }
 }
