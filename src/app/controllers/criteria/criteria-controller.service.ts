@@ -16,4 +16,11 @@ export class CriteriaControllerService {
       }, (err) => reject());
     });
   }
+  getInfo() {
+    return new Promise((resolve, reject) => {
+      this.criteriaService.getInfo().subscribe((obj: any) => {
+        resolve(obj.data);
+      }, (err) => reject(err));
+    });
+  }
 }

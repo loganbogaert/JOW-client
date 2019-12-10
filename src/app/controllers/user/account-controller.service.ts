@@ -24,7 +24,7 @@ export class AccountControllerService {
         async (data: any) => {
             this.appModel.type = data.type;
             await this.criteriaController.getCriterias();
-            console.log(this.appModel.criterias);
+            this.appModel.setToken(data.token);
             resolve();
         },
         (err: any) => reject(err));

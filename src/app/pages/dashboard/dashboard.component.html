@@ -44,21 +44,21 @@
                             <button class="button margin-top-15"><i class="fa fa-user"></i>925 Users Online</button>
                             <label class="margin-top-20">{{userType === 'Employer' ? 'My requests' : 'Complete my Profile'}}</label>
                             <select *ngIf="userType === 'Employer'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showRequestItemPage()">
-                                <option value="1">Request 1</option>
+                                <option *ngFor="let id of profileIds;let i = index" value="{{id}}">{{userType === 'Employer' ? 'Request' : 'Profile'}} {{i + 1}}</option>
                             </select>
                             <select *ngIf="userType != 'Employer'" style="padding: 14px 18px;" [(ngModel)]="selectedItem" (change)="showProfileItemPage()">
-								<option value="1">Profile 1</option>
-							</select>
+                              <option *ngFor="let id of profileIds;let i = index" value="{{id}}">{{userType === 'Employer' ? 'Request' : 'Profile'}} {{i + 1}}</option>
+							              </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12" *ngIf="page === 'dashboard'">
                 <div class="dashboard-list-box">
                     <h4>Make yourself known Complete your {{userType === 'Employer' ? 'request!' : 'profile!'}}</h4>
                 </div>
             </div>
-            <div class="col-lg-5 col-md-12">
+            <div class="col-lg-5 col-md-12" *ngIf="page === 'dashboard'">
                 <div class="dashboard-list-box with-icons ">
                     <h4>Maximize your chances to match</h4>
                     <ul class="dashboard-packages">
@@ -71,6 +71,12 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-lg-9 col-md-12" *ngIf="page === 'profile'">
+                  <div class="dashboard-list-box margin-top-0">
+                     <app-profile-request></app-profile-request>
+                  </div>
+            </div>
+
         </div>
     </div>
 </div>

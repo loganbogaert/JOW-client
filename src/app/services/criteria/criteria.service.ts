@@ -12,4 +12,7 @@ export class CriteriaService {
     const criterias = '[{"criteria" : "Jobs"}, {"criteria" : "Contracts"}, {"criteria" : "Salaries"}, {"criteria" : "Experiences"}, {"criteria" : "Locations"}, {"criteria" : "Languages"}, {"criteria" : "Licenses"}]';
     return this.http.get(`${this.appModel.url}criteria/?criterias=${criterias}`);
   }
+  getInfo() {
+    return this.http.get(`${this.appModel.url}dashboard`, this.appModel.httpOptions);
+  }
 }

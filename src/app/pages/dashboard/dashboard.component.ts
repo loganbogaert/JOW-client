@@ -1,3 +1,4 @@
+import { CriteriaControllerService } from './../../controllers/criteria/criteria-controller.service';
 import { AppModelService } from './../../models/app-model.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,21 +12,32 @@ export class DashboardComponent implements OnInit {
 
   userType = this.appModel.type;
   selectedItem;
+  profileIds;
+  page = 'dashboard';
 
-  constructor(private router: Router, private appModel: AppModelService) { }
+  constructor(private router: Router, private appModel: AppModelService, private criteriaController: CriteriaControllerService) {
+    this.getInfo();
+  }
 
   ngOnInit() {
-    console.log(this.userType);
+
+  }
+  async getInfo() {
+    const obj: any = await this.criteriaController.getInfo();
+    this.profileIds = obj.profileIds;
+  }
+  showRequestItemPage() {
+    console.log(this.selectedItem);
+    this.downloadProfile(this.selectedItem);
   }
 
-  showRequestItemPage(){
+  showProfileItemPage() {
     console.log(this.selectedItem);
-    this.router.navigateByUrl('list/requests/'+this.selectedItem)
-  }
+    this.downloadProfile(this.selectedItem);
 
-  showProfileItemPage(){
-    console.log(this.selectedItem);
-    this.router.navigateByUrl('list/profiles/'+this.selectedItem)
+  }
+  downloadProfile(id) {
+    this.page = 'profile';
   }
 
 }
