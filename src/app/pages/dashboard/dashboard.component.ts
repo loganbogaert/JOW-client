@@ -16,14 +16,12 @@ export class DashboardComponent implements OnInit {
   profileIds;
   page = 'dashboard';
   type = 'select';
-  version = 0;
-
+  data;
+  currentId;
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private appModel: AppModelService, private criteriaController: CriteriaControllerService, private profileController: ProfileRequestControllerService) {
     this.getInfo();
   }
-
-
   ngOnInit() {
 
   }
@@ -40,8 +38,9 @@ export class DashboardComponent implements OnInit {
 
   }
   async downloadProfile(id) {
-    this.version++;
-    this.appModel.actualProfile = await this.profileController.getProfileById(Number(id));
+    this.appModel.version++;
+    this.data = await this.profileController.getProfileById(Number(id));
+    this.currentId = id;
     this.page = 'profile';
   }
 

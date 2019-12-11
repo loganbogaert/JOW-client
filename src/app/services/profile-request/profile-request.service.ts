@@ -15,4 +15,7 @@ export class ProfileRequestService {
   getProfileById(id: number) {
     return this.http.get(`${this.appModel.url}profile/getOwnProfile/?profileId=${id}`, this.appModel.httpOptions);
   }
+  deleteProfile(id: number) {
+    return this.http.delete(`${this.appModel.url}profile/?profileId=${id}`, this.appModel.httpOptions);
+  }
 }

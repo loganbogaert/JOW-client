@@ -10,10 +10,10 @@ export class AddComponent implements OnInit {
 
   userType = this.appModel.type;
 
-  constructor(private appModel: AppModelService) { }
+  constructor(private appModel: AppModelService) {}
 
   ngOnInit() {
-    console.log(this.userType);
+
   }
 
 }

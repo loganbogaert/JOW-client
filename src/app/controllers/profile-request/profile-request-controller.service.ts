@@ -22,4 +22,9 @@ export class ProfileRequestControllerService {
       }, (err) => reject(err));
     });
   }
+  deleteProfile(id: number) {
+    return new Promise((resolve, reject) => {
+      this.profileService.deleteProfile(id).subscribe((obj: any) => resolve(), (err) => reject(err));
+    });
+  }
 }
