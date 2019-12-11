@@ -14,6 +14,7 @@ export class AppModelService {
       'Content-Type':  'application/json'
     })
   };
+  public actualProfile: any = {};
   public setToken(token) {
      this.httpOptions.headers = this.httpOptions.headers.set('Authorization', token);
   }

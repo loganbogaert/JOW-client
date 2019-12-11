@@ -12,4 +12,7 @@ export class ProfileRequestService {
   createProfile(data: any) {
     return this.http.post(`${this.appModel.url}profile/`, data, this.appModel.httpOptions);
   }
+  getProfileById(id: number) {
+    return this.http.get(`${this.appModel.url}profile/getOwnProfile/?profileId=${id}`, this.appModel.httpOptions);
+  }
 }

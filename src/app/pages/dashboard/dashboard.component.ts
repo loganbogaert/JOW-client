@@ -1,6 +1,7 @@
+import { ProfileRequestControllerService } from './../../controllers/profile-request/profile-request-controller.service';
 import { CriteriaControllerService } from './../../controllers/criteria/criteria-controller.service';
 import { AppModelService } from './../../models/app-model.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,10 +15,14 @@ export class DashboardComponent implements OnInit {
   selectedItem;
   profileIds;
   page = 'dashboard';
+  type = 'select';
+  version = 0;
 
-  constructor(private router: Router, private appModel: AppModelService, private criteriaController: CriteriaControllerService) {
+  // tslint:disable-next-line: max-line-length
+  constructor(private router: Router, private appModel: AppModelService, private criteriaController: CriteriaControllerService, private profileController: ProfileRequestControllerService) {
     this.getInfo();
   }
+
 
   ngOnInit() {
 
@@ -27,16 +32,16 @@ export class DashboardComponent implements OnInit {
     this.profileIds = obj.profileIds;
   }
   showRequestItemPage() {
-    console.log(this.selectedItem);
     this.downloadProfile(this.selectedItem);
   }
 
   showProfileItemPage() {
-    console.log(this.selectedItem);
     this.downloadProfile(this.selectedItem);
 
   }
-  downloadProfile(id) {
+  async downloadProfile(id) {
+    this.version++;
+    this.appModel.actualProfile = await this.profileController.getProfileById(Number(id));
     this.page = 'profile';
   }
 

@@ -15,4 +15,11 @@ export class ProfileRequestControllerService {
       }, (err) => reject(err));
     });
   }
+  getProfileById(id: number) {
+    return new Promise((resolve, reject) => {
+      this.profileService.getProfileById(id).subscribe((obj: any) => {
+        resolve(obj.data);
+      }, (err) => reject(err));
+    });
+  }
 }

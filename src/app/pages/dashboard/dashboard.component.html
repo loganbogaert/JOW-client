@@ -73,7 +73,7 @@
             </div>
             <div class="col-lg-9 col-md-12" *ngIf="page === 'profile'">
                   <div class="dashboard-list-box margin-top-0">
-                     <app-profile-request></app-profile-request>
+                     <app-profile-request [type] = "type" [version] = "version"></app-profile-request>
                   </div>
             </div>
 
