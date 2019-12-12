@@ -27,4 +27,11 @@ export class ProfileRequestControllerService {
       this.profileService.deleteProfile(id).subscribe((obj: any) => resolve(), (err) => reject(err));
     });
   }
+  getMatches(id: number, start: number, amount: number) {
+    return new Promise((resolve, reject) => {
+      this.profileService.getMatches(id, start, amount).subscribe((obj: any) => {
+        resolve(obj.data);
+      }, (err) => reject(err));
+    });
+  }
 }
