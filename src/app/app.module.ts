@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -13,8 +13,8 @@ import { MyMatchingComponent } from './pages/my-matching/my-matching.component';
 import { ProfileAndRequestListComponent } from './pages/profile-and-request-list/profile-and-request-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddComponent } from './pages/add/add.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProfileRequestComponent } from './component/profile-request/profile-request.component';
+import { ProfileRequestComponent } from './component/header/profile-request/profile-request.component';
+import { MatchComponent } from './component/header/match/match.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ProfileRequestComponent } from './component/profile-request/profile-req
     ProfileAndRequestListComponent,
     DashboardComponent,
     AddComponent,
-    ProfileRequestComponent
+    ProfileRequestComponent,
+    MatchComponent
   ],
   imports: [
     BrowserModule,

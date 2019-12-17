@@ -18,7 +18,7 @@ export class ProfileRequestService {
   deleteProfile(id: number) {
     return this.http.delete(`${this.appModel.url}profile/?profileId=${id}`, this.appModel.httpOptions);
   }
-  getMatches(id: number, start: number, amount: number) {
-    return this.http.get(`${this.appModel.url}profile/?profileId=${id}&start=${start}&amount=${amount}`, this.appModel.httpOptions);
+  getMatches(start: number, amount: number) {
+    return this.http.get(`${this.appModel.url}profile/?start=${start}&amount=${amount}`, this.appModel.httpOptions);
   }
 }
