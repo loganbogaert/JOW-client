@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { AccountControllerService } from './../../controllers/user/account-controller.service';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
@@ -18,8 +19,10 @@ export class SigninComponent implements OnInit {
     // postcode: ["", Validators.required],
     username: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength]],
+    rememberme: ['']
   });
-  constructor(private fb: FormBuilder, private userController: AccountControllerService, private router: Router) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private fb: FormBuilder, private userController: AccountControllerService, private router: Router, private cookieService: CookieService) { }
 
   ngOnInit() {
   }
@@ -32,11 +35,17 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
     if (!this.singInForm.invalid) {
-      this.userController.login(this.singInForm.get('username').value, this.singInForm.get('password').value).then(() =>
-      this.moveToDashBoard()
+      this.userController.login(this.singInForm.get('username').value, this.singInForm.get('password').value).then(() => {
+      if (this.singInForm.get('rememberme').value === true) {
+        this.cookieService.set('RM', 'true');
+        this.cookieService.set('email', this.singInForm.get('username').value);
+        this.cookieService.set('password', this.singInForm.get('password').value);
+      }
+      this.moveToDashBoard();
+
+    }
 ).catch((err: any) => {
         switch (err.error.code) {
           case 'NM': alert('User does not exist or password does not match');

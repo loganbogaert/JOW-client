@@ -15,6 +15,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AddComponent } from './pages/add/add.component';
 import { ProfileRequestComponent } from './component/header/profile-request/profile-request.component';
 import { MatchComponent } from './component/header/match/match.component';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { MatchComponent } from './component/header/match/match.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
