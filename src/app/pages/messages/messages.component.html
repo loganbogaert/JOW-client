@@ -6,9 +6,17 @@
             <div class="col-md-12">
                 <nav id="navigation" class="menu">
                     <ul id="responsive float-right">
-                        <li><a href="javascript:void(0)" routerLink="/dashboard" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Home</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Messages</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}} </a></li>
+                        <li><a href="javascript:void(0)" routerLink="/dashboard"
+                                [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">Home</a></li>
+                        <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">Messages</a></li>
+                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}}
+                            </a></li>
+                        <li><a href="javascript:void(0)" routerLink="/my-matches"
+                                [routerLinkActiveOptions]="{exact:true}"
+                                routerLinkActive="dashboard_tab_active">Matches</a></li>
                     </ul>
                     <ul *ngIf="userType != 'ask-skill'" class="responsive float-right">
                         <li><a href="javascript:void(0)">952 Online</a></li>
@@ -45,7 +53,7 @@
                         <div class="messages-inbox">
                             <ul>
                                 <li class="active-message">
-                                    <a href="javascript:void(0)">
+                                    <a href="dashboard-messages.html">
                                         <div class="message-avatar"><img
                                                 src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                                 alt="" /></div>
@@ -56,13 +64,15 @@
                                                 <span>2 hours ago</span>
                                             </div>
                                             <p>Hello, I want to talk about your great listing! Morbi velit eros,
-                                                sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem,
-                                                eu ultricies tortor lacinia neque imperdiet vitae...</p>
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
                                         </div>
                                     </a>
                                 </li>
+
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="dashboard-messages.html">
                                         <div class="message-avatar"><img
                                                 src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                                 alt="" /></div>
@@ -73,13 +83,15 @@
                                                 <span>4 hours ago</span>
                                             </div>
                                             <p>Hello, I want to talk about your great listing! Morbi velit eros,
-                                                sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem,
-                                                eu ultricies tortor lacinia neque imperdiet vitae...</p>
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
                                         </div>
                                     </a>
                                 </li>
+
                                 <li>
-                                    <a href="javascript:void(0)">
+                                    <a href="dashboard-messages.html">
                                         <div class="message-avatar"><img
                                                 src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                                 alt="" /></div>
@@ -90,8 +102,9 @@
                                                 <span>Yesterday</span>
                                             </div>
                                             <p>Hello, I want to talk about your great listing! Morbi velit eros,
-                                                sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem,
-                                                eu ultricies tortor lacinia neque imperdiet vitae...</p>
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
                                         </div>
                                     </a>
                                 </li>
@@ -103,38 +116,41 @@
                                         src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                         alt="" /></div>
                                 <div class="message-text">
-                                    <p>Hello, I want to talk about your great listing! Morbi velit eros, sagittis in
-                                        facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor
-                                        lacinia neque imperdiet vitae.</p>
+                                    <p>Hello, I want to talk about your great listing! Morbi velit eros,
+                                        sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem,
+                                        eu ultricies tortor lacinia neque imperdiet vitae.</p>
                                 </div>
                             </div>
+
                             <div class="message-bubble me">
                                 <div class="message-avatar"><img
                                         src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                         alt="" /></div>
                                 <div class="message-text">
                                     <p>Nam ut hendrerit orci, ac gravida orci. Cras tristique rutrum libero at
-                                        consequat. Vestibulum vehicula neque maximus sapien iaculis, nec vehicula sapien
-                                        fringilla.</p>
+                                        consequat. Vestibulum vehicula neque maximus sapien iaculis, nec
+                                        vehicula sapien fringilla.</p>
                                 </div>
                             </div>
+
                             <div class="message-bubble me">
                                 <div class="message-avatar"><img
                                         src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                         alt="" /></div>
                                 <div class="message-text">
-                                    <p>Accumsan et porta ac, volutpat id ligula. Donec neque neque, blandit eu pharetra
-                                        in, tristique id enim.</p>
+                                    <p>Accumsan et porta ac, volutpat id ligula. Donec neque neque, blandit eu
+                                        pharetra in, tristique id enim.</p>
                                 </div>
                             </div>
+
                             <div class="message-bubble">
                                 <div class="message-avatar"><img
                                         src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
                                         alt="" /></div>
                                 <div class="message-text">
-                                    <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut feugiat sed,
-                                        ornare vitae nunc. Donec massa nisl, bibendum id ultrices sed, accumsan sed
-                                        dolor.</p>
+                                    <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut
+                                        feugiat sed, ornare vitae nunc. Donec massa nisl, bibendum id ultrices
+                                        sed, accumsan sed dolor.</p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -144,7 +160,14 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+            </div>
+
+            <!-- Copyrights -->
+            <div class="col-md-12">
+
             </div>
         </div>
     </div>
