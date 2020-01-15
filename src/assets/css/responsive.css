@@ -438,3 +438,34 @@
      width     : 0;
      height    : 0
  }
+
+ @media only screen and (max-width:480px) {
+    #dashboard{
+        padding-top: 0;
+    }
+    .dashboard-content{
+        padding-top: 0;
+    }
+    .menu ul li{
+        margin-left: 3px;
+    }
+    #navigation.menu li a{
+        font-size: 13px;
+        padding: 10px;
+    }
+    .my-profile button.margin-top-15{
+        margin-right: 10px;
+    }
+    .sf-with-ul{
+        display: none !important;
+    }
+    .dashboard-list-box.with-icons ul li{
+        padding-left: 0;
+    }
+    #mobile-navigation{
+        display: none !important;
+    }
+    header{
+        height: auto !important;
+    }
+}
