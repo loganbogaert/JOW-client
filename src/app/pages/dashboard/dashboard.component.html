@@ -6,15 +6,15 @@
             <div class="col-md-12">
                 <nav id="navigation" class="menu">
                     <ul id="responsive float-right">
-                        <li><a href="javascript:void(0)" routerLink="/dashboard" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Home</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Messages (20)</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}} </a></li>
-                        <li><a href="javascript:void(0)" routerLink="/my-matches" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Matches (20)</a></li>
+                    <li><a href="javascript:void(0)" class="{{dashboard ? 'dashboard_tab_active' : ''}}" (click)="dashboard_page()">Home</a></li>
+                        <li><a href="javascript:void(0)" class="{{message ? 'dashboard_tab_active' : ''}}" (click)="message_page()">Messages (20)</a></li>
+                        <li><a href="javascript:void(0)" class="{{AddProfileAndRequest ? 'dashboard_tab_active' : ''}}" (click)="profile_request_page()">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}} </a></li>
+                        <li><a href="javascript:void(0)" class="{{matches ? 'dashboard_tab_active' : ''}}" (click)="matches_page()">Matches (20)</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="row">
+        <div *ngIf="dashboard" class="row">
             <div class="col-lg-3 col-md-12 margin-bottom-10">
                 <div class="dashboard-list-box margin-top-0">
                     <div class="dashboard-list-box-static">
@@ -55,6 +55,183 @@
                  <app-profile-request [type] = "type" [data] = "data" [currentId] = "currentId" [version] = "appModel.version"></app-profile-request>
               </div>
         </div>
+        </div>
+        <div *ngIf="AddProfileAndRequest">
+            <div *ngIf="userType === 'Employer'" class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                        <div class="dashboard-list-box-static">
+                            <div class="my-profile">
+                                <button class="button margin-top-15"><i class="fa fa-user"></i>925 Users Online</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                        <h4 class="gray">Complete my Request</h4>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                      <app-profile-request></app-profile-request>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="userType != 'Employer'" class="row">
+                <div class="col-lg-3 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                        <div class="dashboard-list-box-static">
+                            <div class="my-profile">
+                                <button class="button margin-top-15"><i class="fa fa-user"></i>925 Users
+                                    Online</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                        <h4 class="gray">Complete my Profile</h4>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                      <app-profile-request></app-profile-request>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="message" class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="messages-container margin-top-0">
+                    <div class="messages-container-inner">
+                        <div class="messages-inbox">
+                            <ul>
+                                <li class="active-message">
+                                    <a href="dashboard-messages.html">
+                                        <div class="message-avatar"><img
+                                                src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                                alt="" /></div>
+
+                                        <div class="message-by">
+                                            <div class="message-by-headline">
+                                                <h5>Kathy Brown</h5>
+                                                <span>2 hours ago</span>
+                                            </div>
+                                            <p>Hello, I want to talk about your great listing! Morbi velit eros,
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="dashboard-messages.html">
+                                        <div class="message-avatar"><img
+                                                src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                                alt="" /></div>
+
+                                        <div class="message-by">
+                                            <div class="message-by-headline">
+                                                <h5>John Doe <i>Unread</i></h5>
+                                                <span>4 hours ago</span>
+                                            </div>
+                                            <p>Hello, I want to talk about your great listing! Morbi velit eros,
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="dashboard-messages.html">
+                                        <div class="message-avatar"><img
+                                                src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                                alt="" /></div>
+
+                                        <div class="message-by">
+                                            <div class="message-by-headline">
+                                                <h5>Thomas Smith</h5>
+                                                <span>Yesterday</span>
+                                            </div>
+                                            <p>Hello, I want to talk about your great listing! Morbi velit eros,
+                                                sagittis in facilisis non, rhoncus et erat. Nam posuere
+                                                tristique sem, eu ultricies tortor lacinia neque imperdiet
+                                                vitae...</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <div class="message-avatar"><img
+                                        src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                        alt="" /></div>
+                                <div class="message-text">
+                                    <p>Hello, I want to talk about your great listing! Morbi velit eros,
+                                        sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem,
+                                        eu ultricies tortor lacinia neque imperdiet vitae.</p>
+                                </div>
+                            </div>
+
+                            <div class="message-bubble me">
+                                <div class="message-avatar"><img
+                                        src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                        alt="" /></div>
+                                <div class="message-text">
+                                    <p>Nam ut hendrerit orci, ac gravida orci. Cras tristique rutrum libero at
+                                        consequat. Vestibulum vehicula neque maximus sapien iaculis, nec
+                                        vehicula sapien fringilla.</p>
+                                </div>
+                            </div>
+
+                            <div class="message-bubble me">
+                                <div class="message-avatar"><img
+                                        src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                        alt="" /></div>
+                                <div class="message-text">
+                                    <p>Accumsan et porta ac, volutpat id ligula. Donec neque neque, blandit eu
+                                        pharetra in, tristique id enim.</p>
+                                </div>
+                            </div>
+
+                            <div class="message-bubble">
+                                <div class="message-avatar"><img
+                                        src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                        alt="" /></div>
+                                <div class="message-text">
+                                    <p>Vivamus lobortis vel nibh nec maximus. Donec dolor erat, rutrum ut
+                                        feugiat sed, ornare vitae nunc. Donec massa nisl, bibendum id ultrices
+                                        sed, accumsan sed dolor.</p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="message-reply">
+                                <textarea cols="40" rows="3" placeholder="Your Message"></textarea>
+                                <button class="button">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Copyrights -->
+            <div class="col-md-12">
+
+            </div>
+        </div>
+        <div *ngIf="matches" class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="dashboard-list-box with-icons ">
+                    <h4>My Matching</h4>
+                </div>
+            </div>
+            <app-match *ngFor="let profile of profiles; let i = index" [index] = "i" [description] = "profile.description"></app-match>
         </div>
     </div>
 </div>

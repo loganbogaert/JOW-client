@@ -439,7 +439,13 @@
      height    : 0
  }
 
- @media only screen and (max-width:480px) {
+ @media only screen and (max-width:1260px) {
+    .my-profile button.margin-top-15{
+        margin-right: 15px;
+    }
+ }
+
+ @media only screen and (max-width:990px) {
     #dashboard{
         padding-top: 0;
     }
@@ -467,5 +473,8 @@
     }
     header{
         height: auto !important;
+    }
+    .dashboard-header #navigation{
+        width: 375px !important;
     }
 }

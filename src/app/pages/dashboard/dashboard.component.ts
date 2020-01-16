@@ -18,12 +18,23 @@ export class DashboardComponent implements OnInit {
   type = 'select';
   data;
   currentId;
+  start = 0;
+  amount = 10;
+  profiles: any;
+  dashboard : boolean = true;
+  message : boolean = false;
+  AddProfileAndRequest : boolean = false;
+  matches : boolean = false;
+
   // tslint:disable-next-line: max-line-length
   constructor(private router: Router, private appModel: AppModelService, private criteriaController: CriteriaControllerService, private profileController: ProfileRequestControllerService) {
     this.getInfo();
   }
   ngOnInit() {
-
+    this.dashboard  = true;
+    this.message = false;
+    this.AddProfileAndRequest  = false;
+    this.matches  = false;
   }
   async getInfo() {
     const obj: any = await this.criteriaController.getInfo();
@@ -44,4 +55,36 @@ export class DashboardComponent implements OnInit {
     this.page = 'profile';
   }
 
+  dashboard_page(){
+    this.dashboard  = true;
+    this.message = false;
+    this.AddProfileAndRequest  = false;
+    this.matches  = false;
+  }
+
+  message_page(){
+    this.dashboard  = false;
+    this.message = true;
+    this.AddProfileAndRequest  = false;
+    this.matches  = false;
+  }
+
+  profile_request_page(){
+    this.dashboard  = false;
+    this.message = false;
+    this.AddProfileAndRequest  = true;
+    this.matches  = false;
+  }
+
+  matches_page(){
+    this.dashboard  = false;
+    this.message = false;
+    this.AddProfileAndRequest  = false;
+    this.matches  = true;
+  }
+
+  async getMatches() {
+    this.profiles = await this.profileController.getMatches(this.start, this.amount);
+    console.log(this.profiles);
+  }
 }
