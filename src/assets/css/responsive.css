@@ -439,6 +439,10 @@
      height    : 0
  }
 
+ .my-profile button.margin-top-15{
+     margin-right: 10px;
+ }
+ 
  @media only screen and (max-width:1260px) {
     .my-profile button.margin-top-15{
         margin-right: 15px;
@@ -458,9 +462,6 @@
     #navigation.menu li a{
         font-size: 13px;
         padding: 10px;
-    }
-    .my-profile button.margin-top-15{
-        margin-right: 10px;
     }
     .sf-with-ul{
         display: none !important;

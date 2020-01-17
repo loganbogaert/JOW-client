@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: "add", component : AddComponent},
   { path: "messages", component : MessagesComponent},
   { path: "my-matches", component : MyMatchingComponent},
-  { path: "dashboard", component : DashboardComponent, canActivate: [CanAccessDashboardService]},
+  // { path: "dashboard", component : DashboardComponent, canActivate: [CanAccessDashboardService]},
+  { path: "dashboard", component : DashboardComponent},
   { path: "**", component : HomeComponent},
 ];
 
