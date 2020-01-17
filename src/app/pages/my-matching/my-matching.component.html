@@ -1,26 +1,9 @@
-<app-header></app-header>
-
-<div id="dashboard">
-    <div class="dashboard-content">
-        <div class="row">
-            <div class="col-md-12">
-                <nav id="navigation" class="menu">
-                    <ul id="responsive float-right">
-                        <li><a href="javascript:void(0)" routerLink="/dashboard" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Home</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/messages" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Messages (20)</a></li>
-                        <li><a href="javascript:void(0)" routerLink="/add" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">{{userType === 'Employer' ? 'Add Request' : 'Add Profile'}} </a></li>
-                        <li><a href="javascript:void(0)" routerLink="/my-matches" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="dashboard_tab_active">Matches (20)</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-12">
-                <div class="dashboard-list-box with-icons ">
-                    <h4>My Matching</h4>
-                </div>
-            </div>
-            <app-match *ngFor="let profile of profiles; let i = index" [index] = "i" [description] = "profile.description"></app-match>
+<div class="row">
+    <div class="col-lg-8 col-md-12">
+        <div class="dashboard-list-box with-icons ">
+            <h4>My Matching</h4>
         </div>
     </div>
+    <app-match *ngFor="let profile of profiles; let i = index" [index] = "i" [description] = "profile.description"></app-match>
 </div>
+
