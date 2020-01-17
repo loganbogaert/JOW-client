@@ -478,4 +478,7 @@
     .dashboard-header #navigation{
         width: 375px !important;
     }
+    .messages-inbox ul{
+        width: 100% !important;
+    }
 }
